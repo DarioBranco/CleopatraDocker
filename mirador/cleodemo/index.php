@@ -190,33 +190,11 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
         
 	
 
-	function callrestapi(){
-		
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-		    if (this.status == 200) {
-		        console.log('entrato');
-                        // Typical action to be performed when the document is ready:
-		        var response = JSON.parse(xhttp.responseText);
-		        console.log(response.message);
-                        transmit("user_uttered",response.message); 
-		    }
-			else{
-				console.log(this.readyState);
-			}
-		};
-		xhttp.open("GET", "http://193.206.103.75:5003/api/sessionid", true);
 
-		xhttp.send();
-		
-    		setTimeout(callrestapi, 3000);
-	}
-
-	callrestapi();
 	miradorInstance.store.subscribe( () => {
 		//console.log(miradorInstance.store.getState());
 		var state = miradorInstance.store.getState();
-
+                
 
 		//INTERCEPTION OF PAGE CHANGE EVENT:
 		if( typeof this.oldId === 'undefined' )
