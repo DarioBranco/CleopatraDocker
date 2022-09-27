@@ -84,7 +84,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
       window.WebChat.default(
         {
           customData: { language: "en" , mirador: true},
-          socketUrl: "http://parsec2.unicampania.it",
+          socketUrl: "http://rasa-server:5005",
           //socketUrl: "https://parsec2.unicampania.it",
           socketPath: "/socketintent.io/",
           //socketUrl: "https://bf-botfront.development.agents.botfront.cloud",
