@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  mirador:
+    image: ubuntu/apache2
+    volumes:
+      - type: bind
+        source: ./mirador/cleodemo
+        target: /var/www/html
+    ports: 
+      - "8087:80"
+    networks:
+      - rasa-networks
+  rasa-actions:
+    image: rasa/rasa-sdk:3.2.1
+    volumes:
+      - type: bind
+        source: ./summerschool/actions
+        target: /app/actions
+    networks:
+      - rasa-networks
+    command: run
+    container_name: action-server
+  rasa:
+    build:
+      context: .
+    volumes:
+      - type: bind
+        source: ./summerschool
+        target: /app
+    container_name: rasa-server
+    ports:
+      - "5005:5005"
+    networks:
+      - rasa-networks
+    command: run -m models --enable-api --cors "*" --debug -p 5005
+networks:
+  rasa-networks:
+    external: false
+    name: rasa-networks
