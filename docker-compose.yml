@@ -4,7 +4,7 @@ services:
     image: ubuntu/apache2
     volumes:
       - type: bind
-        source: ./mirador/cleodemo
+        source: ./mirador/
         target: /var/www/html
     ports: 
       - "8087:80"
@@ -14,7 +14,7 @@ services:
     image: rasa/rasa-sdk:3.2.1
     volumes:
       - type: bind
-        source: ./summerschool/actions
+        source: ./rasa_repo/actions
         target: /app/actions
     networks:
       - rasa-networks
@@ -25,7 +25,7 @@ services:
       context: .
     volumes:
       - type: bind
-        source: ./summerschool
+        source: ./rasa_repo
         target: /app
     container_name: rasa-server
     ports:
