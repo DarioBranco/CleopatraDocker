@@ -14,12 +14,15 @@ services:
     image: rasa/rasa-sdk:3.2.1
     volumes:
       - type: bind
-        source: ./rasa_repo/actions
+        source: ./rasa_repo/actions/
         target: /app/actions
     networks:
       - rasa-networks
-    command: run
     container_name: action-server
+    ports:
+      - 5055:5055 
+    command:
+        - start
   rasa:
     build:
       context: .
