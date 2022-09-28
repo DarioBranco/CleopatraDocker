@@ -102,20 +102,18 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	onsocketevent = {
 	'bot_uttered': function(e) {
 		 if(e){
-			 
 			 if(e.text){
 		     text = e.text; 
 	         say222();
 		       }
 		     else if(e.action)
 		       {
-				   exec_mirador_actions("http://parsec2.unicampania.it/~cleopatra/cleodemo/summerschool/mir_actions.php",e.action, miradorInstance);
-
-		     }
+				   exec_mirador_actions("./summerschool/mir_actions.php",e.action, miradorInstance);
+		       }
 			  else if(e.attachment)
 		       {
-				exec_mirador_action(JSON.parse(e.attachment).action,miradorInstance);
-			  }
+				   exec_mirador_action(JSON.parse(e.attachment).action,miradorInstance);
+			   }
 	      }
     }
  }

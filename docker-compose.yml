@@ -10,6 +10,7 @@ services:
       - "8087:80"
     networks:
       - rasa-networks
+    container_name: mirador-container
   rasa-actions:
     image: rasa/rasa-sdk:3.2.1
     volumes:
@@ -36,6 +37,20 @@ services:
     networks:
       - rasa-networks
     command: run -m models --enable-api --cors "*" --debug -p 5005
+  mongodb:
+    image: mongo:4.4.6
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"
+    networks:
+      - rasa-networks
+    volumes:
+      - type: bind
+        source: ./data/db
+        target: /data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=yourusername
+      - MONGO_INITDB_ROOT_PASSWORD=yourpassword
 networks:
   rasa-networks:
     external: false
