@@ -20,26 +20,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
   
     
     <link rel="stylesheet" type="text/css" href="mirador3/manifestButton.css" />
-    
-    <!--  Bot Libs-->
-    <!--
-	<script type='text/javascript' src='strophe.umd.js'></script>
-	
-	<script type='text/javascript' src='echobot.js'></script>
-	-->
-	
-<!--	
-	<script type="text/javascript" src="chung/mytemplates.js"></script>
-	<script type="text/javascript" src="chung/mypatterns.js"></script>
-	<script type="text/javascript" src="chung/mywords.js"></script>
-	<script type="text/javascript" src="chung/mywordspatt.js"></script>
-	<script type="text/javascript" src="chung/mystarpatt.js"></script>
-	<script type="text/javascript" src="chung/mystarpatt2.js"></script>
-	<script type="text/javascript" src="chung/mystartemp.js"></script>
-	<script type="text/javascript" src="chung/mythats.js"></script>
-	<script type="text/javascript" src="chung/mytopics.js"></script>
--->	
-	<!--  please put here your own yandex-translate free key -->  
+      
 	<script type="text/javascript" src="chung/myyandexkey.js"></script>
 	<script type='text/javascript' src='chung/chatbot_chung_prog_s.js'></script>
 	<script type="text/javascript">
@@ -54,9 +35,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	<script type="text/javascript" src="chung/anne4mouth_obj.js"></script>
 	<script type="text/javascript" src="chung/anne4moutho_obj.js"></script>
 	<script type="text/javascript" src="chung/anne4smile_obj.js"></script>
-	<!--script type="text/javascript" src="anne4_jpg.js"></script-->
-	<!--script type="text/javascript" src="alexiabody2_obj.js"></script>
-	<script type="text/javascript" src="alexiabody2_jpg.js"></script-->
+
 	<script type="text/javascript" src="chung/myjsc3d.js"></script>
 	
 	<script type="text/javascript" src="chung/ciel_jpg.js"></script>
@@ -78,20 +57,15 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
     t = document.head || document.getElementsByTagName("head")[0];
   (e.src =
     "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
-    // Replace 1.x.x with the version that you want
     (e.async = !0),
     (e.onload = () => {
       window.WebChat.default(
         {
           customData: { language: "en" , mirador: true},
           socketUrl: "http://rasa-server:5005",
-          //socketUrl: "https://parsec2.unicampania.it",
           socketPath: "/socketintent.io/",
-          //socketUrl: "https://bf-botfront.development.agents.botfront.cloud",
-
           embedded: false,
           onSocketEvent: onsocketevent,
-          // add other props here
         },
         null
       );
