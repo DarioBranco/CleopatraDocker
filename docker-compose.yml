@@ -29,7 +29,7 @@ services:
       context: .
     volumes:
       - type: bind
-        source: ./mongoinstaller
+        source: ./rasa_repo
         target: /home/cleopatra
     container_name: rasa-server
     ports:
