@@ -6,6 +6,8 @@ services:
       - type: bind
         source: ./mirador/
         target: /var/www/html
+    restart: unless-stopped
+
     ports: 
       - "8087:80"
     networks:
@@ -19,6 +21,7 @@ services:
         target: /app/actions
     networks:
       - rasa-networks
+    restart: unless-stopped
     container_name: action-server
     ports:
       - 5055:5055 
@@ -34,6 +37,8 @@ services:
     container_name: rasa-server
     ports:
       - "5005:5005"
+    restart: unless-stopped
+
     networks:
       - rasa-networks
     command: run -m models --enable-api --cors "*" --debug -p 5005
@@ -73,6 +78,8 @@ services:
     container_name: supervisord
     ports:
       - "9001:9001"
+    restart: unless-stopped
+
     networks:
       - rasa-networks
     command: supervisord -c /etc/supervisor/supervisord.conf
