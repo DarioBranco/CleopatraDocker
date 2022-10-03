@@ -14,13 +14,13 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
     <style type="text/css">
      #viewer {  width: 100%; height: 100%; }
     </style>
-    
+
     <script src="mirador3/mirador.min.js"></script>
-    
-  
-    
+
+
+
     <link rel="stylesheet" type="text/css" href="mirador3/manifestButton.css" />
-      
+
 	<script type="text/javascript" src="chung/myyandexkey.js"></script>
 	<script type='text/javascript' src='chung/chatbot_chung_prog_s.js'></script>
 	<script type="text/javascript">
@@ -37,7 +37,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	<script type="text/javascript" src="chung/anne4smile_obj.js"></script>
 
 	<script type="text/javascript" src="chung/myjsc3d.js"></script>
-	
+
 	<script type="text/javascript" src="chung/ciel_jpg.js"></script>
 
   <script type="text/javascript" src="chung/chatbot_chung_say.js"></script>
@@ -52,7 +52,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 <script>
 
 !(function () {
-	
+
   let e = document.createElement("script"),
     t = document.head || document.getElementsByTagName("head")[0];
   (e.src =
@@ -62,7 +62,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
       window.WebChat.default(
         {
           customData: { language: "en" , mirador: true},
-          socketUrl: "http://rasa-server:5005",
+          socketUrl: "http://172.168.1.4:5005",
           socketPath: "/socketintent.io/",
           embedded: false,
           onSocketEvent: onsocketevent,
@@ -77,7 +77,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	'bot_uttered': function(e) {
 		 if(e){
 			 if(e.text){
-		     text = e.text; 
+		     text = e.text;
 	         say222();
 		       }
 		     else if(e.action)
@@ -91,15 +91,15 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	      }
     }
  }
-    
+
 </script>
 
     <div id="viewer"/>
 
 
-	  <script type="text/javascript">	
-		  
-    		  
+	  <script type="text/javascript">
+
+
 	var miradorInstance = Mirador.viewer({
        id: 'viewer',
        language: 'it',
@@ -116,7 +116,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 						{ key: 'scroll'},
 						{ key: 'gallery' }
 						]
-				
+
 			},
 	  windows: [{
 		 id: 'main_window',
@@ -128,12 +128,12 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
        /*
        workspace: {
 
-    isWorkspaceAddVisible: true, 
+    isWorkspaceAddVisible: true,
 },*/
        manifestButton: {
 		iconClass: 'fa-file' // Define the icon class of the button
 		},
-		
+
      });
 	//codice milo
 
@@ -159,14 +159,14 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
                                 console.log("message sent");
 		}
 	}
-        
-	
+
+
 
 
 	miradorInstance.store.subscribe( () => {
 		//console.log(miradorInstance.store.getState());
 		var state = miradorInstance.store.getState();
-                
+
 
 		//INTERCEPTION OF PAGE CHANGE EVENT:
 		if( typeof this.oldId === 'undefined' )
@@ -188,7 +188,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 			this.oldId = id;
 
 			transmit("user_uttered", "page change " + id);
-        
+
 
 		}
 
@@ -251,9 +251,9 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
     </script>
 
 </body>
-  
-  
-<script>    
+
+
+<script>
     window.document.body.insertAdjacentHTML( 'afterbegin', '<div id="chunghead" style="display:block;box-sizing: border-box;z-index:1031;bottom:5px;margin:0;right:10px;left:0;height:3em;position:fixed;padding-left: env(safe-area-inset-left);padding-right:env(safe-area-inset-right);"><div style="z-index: 1031;position: fixed;top: 5em;right: 260px;display: flex;flex-wrap: wrap;"><div  class="flyout box-flyout" style="width:250px;display: flex;flex-direction: column; justify-content: space-between;box-shadow: 1px 3px 5px 3px rgb(0 0 0 / 40%);z-index: 2;overflow: hidden; border-radius: 0;position:absolute;flex-direction: column;"><canvas id="cv" style="border: 1px solid;" width="250" height="250" ></canvas></div></div></div>' );
     var canvas;
 	var viewer;
@@ -268,8 +268,8 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		canvas = document.getElementById('cv');
 		var wx= parseInt(window.innerWidth*0.98);
         var wy= parseInt(window.innerHeight*0.89);
-		canvas.width=Math.min(wx,wy);  
-		canvas.height=Math.min(wx,wy); 
+		canvas.width=Math.min(wx,wy);
+		canvas.height=Math.min(wx,wy);
         //document.getElementById("msg").setAttribute("style", "top:0px;left:0px;width:250px;height:"+(Math.min(wx,wy)-4)+"px;");
 		viewer = new JSC3D.Viewer(canvas);
 	    //viewer.setParameter('SceneUrl', '../demos/models/anne4.obj');
@@ -314,7 +314,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		viewer.replaceScene(myscene);
 		viewer.update();
         //alert("addmesh");
-		
+
 		mymesh1=new JSC3D.Mesh;
 		mymesh1.name='mymesh1';
 		mymesh1.vertexBuffer=[];
@@ -341,7 +341,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		mymesh3.texCoordIndexBuffer=[];
 		var mtllibs3=viewer.parseObj(mymesh3,anne4mouthoobj);
 		mymesh3.init();
-		
+
 		mymesh4=new JSC3D.Mesh;
 		mymesh4.name='mymesh4';
 		mymesh4.vertexBuffer=[];
@@ -350,7 +350,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		mymesh4.texCoordIndexBuffer=[];
 		var mtllibs4=viewer.parseObj(mymesh4,anne4smileobj);
 		mymesh4.init();
-		
+
 		setTimeout("init0();",50);
 	}
 	function init0(){
@@ -388,7 +388,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		   mymesh4.vertexBuffer[i+2]+=13.0;
 		}*/
 	    mynvert=mymesh.vertexBuffer.length;
-		//viewer.update(); 
+		//viewer.update();
 		if (mynvert>mymesh1.vertexBuffer.length){mynvert=mesh1.vertexBuffer.length;}
 		if (mynvert>mymesh2.vertexBuffer.length){mynvert=mesh2.vertexBuffer.length;}
 		if (mynvert>mymesh3.vertexBuffer.length){mynvert=mesh3.vertexBuffer.length;}
@@ -452,7 +452,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	mousex0=e.clientX;viewer.rotMatrix.rotateAboutYAxis(-5);
 	viewer.update();};
 	}
-    
+
 	function gettimer(){
     return Date.now();//(new Date()).getTime();
     }
@@ -478,7 +478,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
     var sc=0.895;kmouth1*=sc;kmouth2*=sc;
     for (var i=0;i<nvbuf;i++){
    	  vbuf[i]=(vbuff0[i]+keye*vbuff1[i]+(kmouth1*vbuff2[i])+(kmouth2*vbuff3[i])+(ksmile*vbuff4[i]));
-   	} 
+   	}
 	viewer.update();
 	//subfocus();
 	if (quit==0){tloop=setTimeout("loop();",40);}
@@ -501,10 +501,10 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	  if(tfocus){document.getElementById('intext').value="";}
 	  if(tfocus){document.getElementById('intext').value=text;}
 	  if(tfocus){document.getElementById('intext').focus();}
-	 } 
+	 }
 	 */
 	 ;
-	}  
+	}
 	function resetvars(){};
 var phoneme="",phoneme0="",inword="",inword0="";
 var nphoneme=7,iphoneme=0;
@@ -516,7 +516,7 @@ var Timer=gettimer()/1000.0;
 iphoneme+=1;if(iphoneme>nphoneme){iphoneme=1;};
 phonemes[iphoneme]=iphon;
 tphoneme[iphoneme]=Timer;
-} 
+}
 function drawphoneme(i){
 var ktime,dt,dtt,d1;
 var Timer=gettimer()/1000.0;
@@ -566,10 +566,10 @@ switch(phonemes[i]){
    kmoutho+=(Math.sin(dtt)+d1)*0.18;
    kmouth+=kmoutho*0.25;
    kmouth+=(Math.sin(dtt)+0.7)*0.3;break;
-	
-	default: 
+
+	default:
    kmouth+=(Math.sin(dtt)+0.7)*0.4;break;
-		
+
    }
 }
 
@@ -614,18 +614,18 @@ u.lang = lang;//'en';
 u.rate = 0.65;
 //var voices = window.speechSynthesis.getVoices();
 //u.voice=voices[0];alert(voices[0].name);
-u.onstart = function(event) { 
+u.onstart = function(event) {
   var Timer=gettimer()/1000.0;
   //speechstart=Timer;//alert("speechstart="+speechstart);
   audiotime0=Timer;//speechstart;
-  audiotime1=Timer+(textspeak.length/(vsay+1.0));  
+  audiotime1=Timer+(textspeak.length/(vsay+1.0));
   };
-u.onend = function(event) { 
+u.onend = function(event) {
   var Timer=gettimer()/1000.0;
   //speechend=Timer;alert("speechend="+speechend);
   var len=textspeak.length;
   if(len>2){vsay+=(len/(Timer-audiotime0+0.01)-vsay)*0.35;};
-  audiotime1=audiotime0;  
+  audiotime1=audiotime0;
   //alert(vsay);
   };
 window.speechSynthesis.speak(u);
@@ -691,8 +691,8 @@ printmsg(">>"+intext0.substr(0,40)+crlf+msg);
 var outmsg=msg.substr(msg.indexOf(">")+2,999);
 var patt=msg.substr(0,msg.indexOf(">"));
 if(outmsg.length<0.65*patt.length){
-		outmsg=patt+" "+outmsg; 
-	}	
+		outmsg=patt+" "+outmsg;
+	}
 if(auxvar!=""){msg+=crlf+"auxvar="+auxvar;};
 if(auxvar!=""){printmsg(msg);}
 //alert(outmsg);
@@ -725,7 +725,7 @@ if((Timer>audiotime0) && (Timer<audiotime1) && (textspeak.length>0)){
   if((i>0) && (phoneme=="h")){if(textspeak.substr(i-1,1)=="c"){phoneme="ch";};};
   if ((i<(textspeak.length-1)) && (phoneme=="c")){if(textspeak.substr(i+1,1)=="h"){phoneme="ch";};};
 }else{phoneme=" ";
-      if(textspeakall.length>1 && Timer>(audiotime1+0.02) && 
+      if(textspeakall.length>1 && Timer>(audiotime1+0.02) &&
 	     Timer>(audiotime0+0.02)){
 	     if(audiotime1<(Timer-0.01)){audiotime1=Timer-0.01;}
 	     if(audiotime0<(Timer-0.01)){audiotime0=Timer-0.01;}
@@ -772,10 +772,10 @@ for(var x in v){
   if((x.indexOf('"',0)<0)&&(x.indexOf("/",0)<0)&&(v[x].indexOf('"',0)<0)&&(v[x].indexOf("/",0)<0)){
   if((x.indexOf('=',0)<0)&&(x.indexOf(";",0)<0)&&(v[x].indexOf('=',0)<0)&&(v[x].indexOf(";",0)<0)){
     mycookie+=x+"//"+v[x]+"//";
-    if(mycookie.length>1900){break;}	
+    if(mycookie.length>1900){break;}
   }}
 }
-//alert(mycookie);  
+//alert(mycookie);
 var pref="html5elizabotchung=";
 mycookie =pref+mycookie+"; expires=Fri, 3 Aug 2100 20:47:11 UTC; path=/";
 if(mycookie.length>(3900-cookie0.length)){alert("could not save, cookie too long");return;}
@@ -816,7 +816,7 @@ function myapiCallback2(response){//"de","fr","es","it"
 	if(lang1==response.lang){lang2=lang1;lang=lang1;}
 	else if(lang0==response.lang){lang2=lang0;lang1=lang0;lang=lang0;}
 	else{ lang0=lang1;lang1=response.lang;
-	      lang2=response.lang;}		  
+	      lang2=response.lang;}
     if(listlang.indexOf(lang)<0){lang="en";}
 	ttranslate=gettimer()-2990;
 	setTimeout(nextsub,30);
@@ -845,8 +845,8 @@ function myapiCallback3(response){
 	 for(var langcode in listlangs){listlang[ilang]=langcode;
 	     listlangname[ilang]=listlangs[langcode];ilang+=1;}
 		 //alert(ilang+"/"+listlang[ilang-1]+listlangname[ilang-1]);
-  
- 		 
+
+
 }
 function getlistlang(){
 var js = document.createElement("script");
@@ -874,7 +874,7 @@ ttranslate=0;if(langcombo!="auto"){lang=langcombo;};
 //deletecookie();
 	setTimeout("init();",2000);
 	//init();
-	//alert("okend"); 
+	//alert("okend");
 
 
 </script>
