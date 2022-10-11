@@ -13,7 +13,7 @@ from bson import json_util, ObjectId
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://cleop:cleopatra25..@mongo:27017/cleopatra"
+app.config["MONGO_URI"] = "mongodb://cleopatra:cleop25..@mongo:27017/cleopatra"
 
 myclient = MongoClient(app.config["MONGO_URI"])
 mydb = myclient["cleopatra"]
