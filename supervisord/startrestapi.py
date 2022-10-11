@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, jso
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import os
+from flask_cors import CORS
 import sys
 import json
 from pymongo import MongoClient
@@ -12,12 +13,12 @@ from bson import json_util, ObjectId
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://cleop:cleopatra25..@mongo:27017/cleopatra?authSource=cleopatra"
+app.config["MONGO_URI"] = "mongodb://cleop:cleopatra25..@mongo:27017/cleopatra"
 
 myclient = MongoClient(app.config["MONGO_URI"])
 mydb = myclient["cleopatra"]
 
-
+cors = CORS(app)
 @app.get('/test')
 def test():
     return "Hello World"

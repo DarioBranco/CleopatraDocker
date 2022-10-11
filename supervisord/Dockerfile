@@ -4,7 +4,7 @@ EXPOSE 9001
 
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install supervisor
-RUN python -m pip install flask
+RUN python -m pip install flask flask_cors
 RUN python -m pip install flask_pymongo
 
 WORKDIR /app
@@ -12,5 +12,4 @@ WORKDIR /app
 COPY . .
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 CMD ["/usr/bin/supervisord"]

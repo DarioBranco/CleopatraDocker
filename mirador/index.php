@@ -155,8 +155,13 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	function transmit(action, message) {
 		console.log("azione"+action);
 		if (sockets.length > 0) {
-				sockets[0].send('42["' + action + '",{"message":"' + message + '","customData":{"language":"en","mirador":true},"session_id":"' + sessionId + '"}]');
-                                console.log("message sent");
+			var messagepost = '{"json": { "' + action + '":{"message":"' + message + '","customData":{"language":"en","mirador":true},"session_id":"' + sessionId + '"}}}';
+			sockets[0].send('42["' + action + '",{"message":"' + message + '","customData":{"language":"en","mirador":true},"session_id":"' + sessionId + '"}]');
+							console.log("message sent");
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", 'http://<?php echo getenv("ip_host");?>:5000/event', true);
+			xhttp.setRequestHeader("Content-type", "application/json");
+			xhttp.send(messagepost);
 		}
 	}
 
