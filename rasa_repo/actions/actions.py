@@ -2,7 +2,7 @@
 # custom Python code.
 #
 # See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+# httpsss://rasa.com/docs/rasa/custom-actions
 
 
 # This is a simple example for a custom action which utters "Hello World!"
@@ -13,6 +13,8 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import json
+import os
+
 
 class setTopic(Action):
 
@@ -42,61 +44,61 @@ class get_and_send_Topic(Action):
             return []           
         
         elif (get_topic == 'arch') and (get_page != 'arch'):
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/0"}}}'
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/0"}}}'
 
         elif (get_topic == 'fattori') and (get_page == 'fattori'):
             return []           
         
         elif (get_topic == 'fattori') and (get_page != 'fattori'):    
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/4"}}}'           
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/4"}}}'           
 
         elif (get_topic == 'conocchia') and (get_page == 'conocchia'):
             return []           
         
         elif (get_topic == 'conocchia') and (get_page != 'conocchia'):  
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/5"}}}'
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/5"}}}'
           
         elif (get_topic == 'cryptoporticus') and (get_page == 'cryptoporticus'):
             return []           
         
         elif (get_topic == 'cryptoporticus') and (get_page != 'cryptoporticus'):  
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/9"}}}'        
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/9"}}}'        
 
         elif (get_topic == 'domus_confuleius') and (get_page == 'domus_confuleius'):
             return []           
         
         elif (get_topic == 'domus_confuleius') and (get_page != 'domus_confuleius'):     
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/12"}}}'         
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/12"}}}'         
 
         elif (get_topic == 'second_confuleius') and (get_page == 'second_confuleius'):
             return []           
         
         elif (get_topic == 'second_confuleius') and (get_page != 'second_confuleius'):
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/13"}}}'
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/13"}}}'
 
         elif (get_topic == 'first_confuleius') and (get_page == 'first_confuleius'):
             return []           
         
         elif (get_topic == 'first_confuleius') and (get_page != 'first_confuleius'):
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/13"}}}'             
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/13"}}}'             
 
         elif (get_topic == 'domus_orti') and (get_page == 'domus_orti'):
             return []           
         
         elif (get_topic == 'domus_orti') and (get_page != 'domus_orti'):
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/15"}}}'           
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/15"}}}'           
 
         elif (get_topic == 'theater') and (get_page == 'theater'):
             return []           
         
         elif (get_topic == 'theater') and (get_page != 'theater'):
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/17"}}}'               
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/17"}}}'               
 
         elif (get_topic == 'peculiaris') and (get_page == 'peculiaris'):
             return []           
         
         elif (get_topic == 'peculiaris') and (get_page != 'peculiaris'):   
-            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/19"}}}'        
+            j = '{"action" : {"type" : "CHANGE_CANVAS", "parameters" : {"window_id": "main_window", "argument" : "http://'+os.environ['ip_host']+':8087/iiif/summerschool/index.json/canvas/19"}}}'        
 
         else:
             dispatcher.utter_message("What topic you are insterested in? (Arch, connocchia, domus, theather)") 

@@ -1,0 +1,10 @@
+# syntax=docker/dockerfile:1
+FROM ubuntu/apache2
+RUN apt-get update && apt-get install -y nano iipimage-server php libapache2-mod-php
+COPY ./iipsrv.conf /etc/apache2/mods-enabled/iipsrv.conf
+RUN mkdir -p /home/iiif
+COPY ./   /var/www/html
+ENV ip_host=192.168.1.190
+RUN cd /var/www/html && python3 replace_env.py
+RUN cd /var/www/html && rm index.html
+RUN cp -r /var/www/html/summerschool /home/iiif/summerschool

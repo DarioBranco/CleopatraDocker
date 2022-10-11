@@ -1,12 +1,11 @@
 version: "3.9"
 services:
   mirador:
-    image: ubuntu/apache2
-    volumes:
-      - type: bind
-        source: ./mirador/
-        target: /var/www/html
+    build:
+      context: ./mirador
     restart: unless-stopped
+    environment:
+      - ip_host=192.168.1.190
 
     ports:
       - "8087:80"
@@ -29,6 +28,8 @@ services:
       - 5055:5055
     command:
         - start
+    environment:
+      - ip_host=192.168.1.190
   rasa:
     build:
       context: .
@@ -44,7 +45,7 @@ services:
     networks:
       rasa-networks:
         ipv4_address: 172.168.1.4
-    command: run -m models --enable-api --cors "*" --debug -p 5005
+    command: run -m models --log-file rasa.log --enable-api --cors "*" --debug -p 5005
   mongo:
     image: mongo:5.0
     container_name: mongo

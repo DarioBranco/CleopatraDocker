@@ -11,55 +11,55 @@ nlu:
     - Arco di Capua
     - Arco
     - Arch of Capua
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/0
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/1
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/2
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/3
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/0
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/1
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/2
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/3
 
 - synonym: fattori
   examples: |
     - Fattori
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/4
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/4
 
 - synonym: conocchia
   examples: |
     - Conocchia
     - grave
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/5
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/6
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/7
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/5
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/6
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/7
 
 - synonym: cryptoporticus
   examples: |
     - criptoporticus
     - cryptoporticus
     - criptoportico
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/9   
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/10
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/11
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/9   
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/10
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/11
 
 - synonym: domus_confuleius
   examples: |
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/12
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/12
     
 - synonym: second_confuleius
   examples: |
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/13
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/14
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/13
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/14
 
 - synonym: domus_orti
   examples: |
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/15
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/16
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/15
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/16
 
 - synonym: theater
   examples: |
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/17
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/18
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/17
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/18
 
 - synonym: peculiaris
   examples: |
-    - https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/19
+    - http://localhost:8087/iiif/summerschool/index.json/canvas/19
 
     
 
@@ -505,7 +505,7 @@ nlu:
 
 - intent: EXTERNAL_page_change
   examples: |
-    - page change [https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/0](page_url)
+    - page change [http://localhost:8087/iiif/summerschool/index.json/canvas/0](page_url)
     
 - intent: EXTERNAL_zoom
   examples: |

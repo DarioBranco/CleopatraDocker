@@ -13,3 +13,12 @@ cat config.yml
 ls
 cat rasa.log 
 exit
+ls
+tail -f rasa.log
+exit
+tail -f rasa.log
+exit
+tail -f 
+tail -f rasa.log 
+docker stop rasa-server action-server
+exit

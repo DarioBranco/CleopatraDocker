@@ -62,7 +62,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
       window.WebChat.default(
         {
           customData: { language: "en" , mirador: true},
-          socketUrl: "http://172.168.1.4:5005",
+          socketUrl: "http://<?php echo getenv("ip_host");?>:5005",
           socketPath: "/socketintent.io/",
           embedded: false,
           onSocketEvent: onsocketevent,
@@ -82,7 +82,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 		       }
 		     else if(e.action)
 		       {
-				   exec_mirador_actions("./summerschool/mir_actions.php",e.action, miradorInstance);
+				   exec_mirador_actions("/summerschool/mir_actions.php",e.action, miradorInstance);
 		       }
 			  else if(e.attachment)
 		       {
@@ -121,7 +121,7 @@ https://github.com/IIIF/mirador/wiki/Complete-Configuration-API#loaded-objects
 	  windows: [{
 		 id: 'main_window',
       //   manifestId: 'http://143.225.20.99/alba/msprova/manifest.json',
-      manifestId: 'summerschool/index.json',
+      manifestId: "http://<?php echo getenv("ip_host");?>:8087/summerschool/index.json",
       //   canvasId: 'http://www.dante.unina.it/iiif/ms_jp2/CNMD0000249997/CNMD0000249997_0001.jp1',
         thumbnailNavigationPosition: 'far-bottom',
        }],

@@ -5,7 +5,7 @@
 		"parameters" : 
 		{
 			"window_id": "main_window", 
-			"argument" : "https://parsec2.unicampania.it/cleopatra/cleodemo/summerschool/index.json/canvas/1"
+			"argument" : "https://localhost:8087/iiif/summerschool/index.json/canvas/0"
 		}
 	}
   }
